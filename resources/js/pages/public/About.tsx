@@ -64,7 +64,7 @@ export default function About() {
                             {milestones.map((m, i) => (
                                 <li key={m.title} className="relative grid grid-cols-[24px_1fr] gap-5">
                                     <span className="relative z-10 mt-6 grid h-6 w-6 place-items-center rounded-full bg-ink-950 ring-1 ring-synapse/50">
-                                        <span className="h-2.5 w-2.5 rounded-full bg-synapse shadow-[0_0_12px_#36e3f2]" />
+                                        <span className="h-2.5 w-2.5 rounded-full bg-synapse shadow-[0_0_12px_#dd9933]" />
                                     </span>
                                     <Reveal delay={i * 0.08}>
                                         <div className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5 transition-colors duration-500 hover:border-white/15 hover:bg-white/[0.04] sm:p-6">
@@ -234,7 +234,7 @@ export default function About() {
                 </div>
                 <Marquee className="mt-12" gap="gap-3 pr-3">
                     {disciplines.map((d) => (
-                        <Pill key={d} color="#8b7bff" className="!px-5 !py-2.5 !text-[0.72rem]">
+                        <Pill key={d} color="#f8b81f" className="!px-5 !py-2.5 !text-[0.72rem]">
                             {d}
                         </Pill>
                     ))}
@@ -244,7 +244,7 @@ export default function About() {
             {/* Priorities */}
             <section className="py-20 sm:py-28">
                 <div className="container-x">
-                    <div className="ring-aurora relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#16123a] to-ink-950 p-8 sm:p-14">
+                    <div className="theme-navy ring-aurora relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0d3561] to-ink-950 p-8 sm:p-14">
                         <div className="absolute -right-32 -bottom-32 h-96 w-96 rounded-full bg-iris/30 blur-[120px]" />
                         <SectionHeading eyebrow="Future priorities" title="BHS" accent="aims to…" />
                         <ul className="relative mt-12 grid gap-x-10 gap-y-5 md:grid-cols-2">

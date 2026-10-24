@@ -136,7 +136,7 @@ export function MembershipCategories({ compact = false }: { compact?: boolean })
                     const gold = i === 0;
                     return (
                         <Reveal key={c.name} delay={i * 0.12}>
-                            <div className={cn('ring-aurora relative h-full overflow-hidden rounded-[2rem] p-8 sm:p-10', gold ? 'bg-gradient-to-b from-[#1b1640] to-ink-900' : 'bg-ink-900/60')}>
+                            <div className={cn('ring-aurora relative h-full overflow-hidden rounded-[2rem] p-8 sm:p-10', gold ? 'theme-navy bg-gradient-to-b from-[#0d3561] to-ink-900' : 'bg-ink-900/60')}>
                                 {gold && <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gold/25 blur-[90px]" />}
                                 <div className="relative">
                                     <h3 className="eyebrow !text-ink-200">Membership category</h3>
@@ -168,7 +168,7 @@ export function MembershipCategories({ compact = false }: { compact?: boolean })
                             <SpotlightCard className="h-full p-6">
                                 <div className="flex items-start justify-between gap-4">
                                     <h3 className="font-display text-2xl text-white">{c.name}</h3>
-                                    <Pill color={c.apply ? '#36e3f2' : '#e9c784'}>{c.apply ? 'Open' : 'By conferral'}</Pill>
+                                    <Pill color={c.apply ? '#dd9933' : '#ffc600'}>{c.apply ? 'Open' : 'By conferral'}</Pill>
                                 </div>
                                 <p className="mt-3 text-sm leading-relaxed text-ink-300">{c.text}</p>
                             </SpotlightCard>

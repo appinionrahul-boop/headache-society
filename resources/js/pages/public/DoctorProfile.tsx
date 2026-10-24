@@ -13,7 +13,7 @@ function Portrait({ doctor, hue }: { doctor: Doctor; hue: number }) {
     if (!doctor.photo) return <Avatar name={doctor.name} hue={hue} className="w-48 text-lg sm:w-64" />;
     return (
         <Tilt max={6} className="w-64 sm:w-80">
-            <div className="ring-aurora relative overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_25%,#2d2670,#121735_55%,#05070f)] shadow-[0_40px_120px_-30px_rgba(139,123,255,0.55)]">
+            <div className="theme-navy ring-aurora relative overflow-hidden rounded-[2rem] bg-[radial-gradient(circle_at_50%_25%,#1a4c80,#121735_55%,#021e40)] shadow-[0_40px_120px_-30px_rgba(248,184,31,0.55)]">
                 <div className="absolute inset-0 grid-lines opacity-60" />
                 <div className="absolute -top-16 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-synapse/25 blur-3xl" />
                 <img src={doctor.photo} alt={`Portrait of ${doctor.name}`} className="relative aspect-[4/5] w-full object-cover object-top" />
@@ -55,7 +55,7 @@ export default function DoctorProfile() {
             <Seo title={doctor.name} description={doctor.designation ? `${doctor.designation}, ${doctor.institution}` : `${doctor.ecPosition}, Bangladesh Headache Society`} />
 
             {/* Hero */}
-            <section className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-24">
+            <section className="theme-navy relative overflow-hidden bg-ink-950 pt-36 pb-16 sm:pt-44 sm:pb-24">
                 <NeuralCanvas density={0.4} className="opacity-50" />
                 <div className="absolute -top-20 right-0 h-[500px] w-[600px] rounded-full bg-iris/20 blur-[150px]" />
                 <div className="relative container-x">
@@ -67,7 +67,7 @@ export default function DoctorProfile() {
                             <Portrait doctor={doctor} hue={hue} />
                         </Reveal>
                         <div>
-                            {doctor.ecPosition && <Pill color="#e9c784">{doctor.ecPosition}</Pill>}
+                            {doctor.ecPosition && <Pill color="#ffc600">{doctor.ecPosition}</Pill>}
                             <h1 className="mt-5 font-display text-5xl leading-[0.95] text-white sm:text-7xl">
                                 <SplitWords text={doctor.name} />
                             </h1>
@@ -128,7 +128,7 @@ export default function DoctorProfile() {
                         {doctor.interests && (
                             <div className="mt-8 flex flex-wrap gap-2">
                                 {doctor.interests.map((i) => (
-                                    <Pill key={i} color="#36e3f2">
+                                    <Pill key={i} color="#dd9933">
                                         {i}
                                     </Pill>
                                 ))}
@@ -141,7 +141,7 @@ export default function DoctorProfile() {
                             <ul className="space-y-5">
                                 {doctor.qualifications!.map((q) => (
                                     <li key={q.degree} className="flex gap-4">
-                                        <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br from-synapse to-iris shadow-[0_0_12px_#36e3f2]" />
+                                        <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br from-synapse to-iris shadow-[0_0_12px_#dd9933]" />
                                         <span>
                                             <span className="block font-display text-xl text-white">{q.degree}</span>
                                             {q.institution && <span className="text-sm text-ink-300">{q.institution}</span>}
@@ -174,7 +174,7 @@ export default function DoctorProfile() {
                             <ol className="relative space-y-7 border-l border-white/10 pl-7">
                                 {doctor.career.map((c) => (
                                     <li key={c.year + c.text} className="relative">
-                                        <span className="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-synapse bg-ink-950 shadow-[0_0_12px_#36e3f2]" />
+                                        <span className="absolute top-1.5 -left-[33px] h-3 w-3 rounded-full border-2 border-synapse bg-ink-950 shadow-[0_0_12px_#dd9933]" />
                                         <span className="font-mono text-sm text-synapse">{c.year}</span>
                                         <p className="mt-1 text-ink-100">{c.text}</p>
                                     </li>
@@ -209,7 +209,7 @@ export default function DoctorProfile() {
                                             </div>
                                             <div className="flex items-center gap-3 sm:flex-col sm:items-end">
                                                 <span className="font-mono text-sm text-ink-200">{p.year}</span>
-                                                <Pill color={p.role === 'Principal author' ? '#e9c784' : '#8b7bff'}>{p.role}</Pill>
+                                                <Pill color={p.role === 'Principal author' ? '#ffc600' : '#f8b81f'}>{p.role}</Pill>
                                             </div>
                                         </li>
                                     ))}

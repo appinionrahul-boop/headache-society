@@ -22,10 +22,10 @@ export function Button({ to, href, variant = 'primary', size = 'md', icon = true
         'group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full font-semibold tracking-tight transition-all duration-500 ease-out-expo active:scale-[0.97]',
         size === 'lg' ? 'px-7 py-4 text-[0.95rem]' : 'px-5 py-3 text-sm',
         variant === 'primary' &&
-            'bg-white text-ink-950 shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_20px_50px_-12px_rgba(139,123,255,0.55)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.4),0_24px_70px_-10px_rgba(54,227,242,0.6)]',
+            'bg-[#dd9933] text-[#ffffff] shadow-[0_20px_50px_-12px_rgba(221,153,51,0.55)] hover:bg-[#021e40] hover:shadow-[0_24px_70px_-10px_rgba(2,30,64,0.45)]',
         variant === 'ghost' && 'glass text-white hover:bg-white/10',
         variant === 'gold' &&
-            'bg-gradient-to-b from-[#fff1d0] via-gold to-gold-deep text-ink-950 shadow-[0_20px_50px_-15px_rgba(233,199,132,0.7)]',
+            'bg-gradient-to-b from-[#fff1d0] via-gold to-gold-deep text-ink-950 shadow-[0_20px_50px_-15px_rgba(255,198,0,0.7)]',
         className,
     );
     const inner = (
@@ -100,11 +100,10 @@ export function SectionHeading({
 /** Hero banner used at the top of inner pages. */
 export function PageHero({ eyebrow, title, accent, text, children }: { eyebrow: string; title: string; accent?: string; text?: string; children?: ReactNode }) {
     return (
-        <section className="relative overflow-hidden pt-40 pb-20 sm:pt-48 sm:pb-28">
+        <section className="theme-navy relative overflow-hidden bg-ink-950 pt-40 pb-20 sm:pt-48 sm:pb-28">
             <div className="absolute inset-0 grid-lines" />
             <NeuralCanvas density={0.45} className="opacity-60" />
             <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-iris/20 blur-[140px]" />
-            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-ink-950" />
             <div className="relative container-x">
                 <Reveal>
                     <Eyebrow>{eyebrow}</Eyebrow>
@@ -162,11 +161,11 @@ export function PlaceholderArt({ hue = 250, className, label, seed = 1 }: { hue?
 /** Doctor avatar: photo when available, otherwise monogram on an aura disc. */
 export function Avatar({ name, photo, hue = 250, className }: { name: string; photo?: string; hue?: number; className?: string }) {
     return (
-        <div className={cn('relative aspect-square overflow-hidden rounded-full p-[1.5px]', className)} style={{ background: `conic-gradient(from ${hue}deg, #36e3f2, #8b7bff, #f064c4, #e9c784, #36e3f2)` }}>
+        <div className={cn('relative aspect-square overflow-hidden rounded-full p-[1.5px]', className)} style={{ background: `conic-gradient(from ${hue}deg, #dd9933, #f8b81f, #ff8a3d, #ffc600, #dd9933)` }}>
             <div className="relative grid h-full w-full place-items-center overflow-hidden rounded-full bg-ink-900">
                 {photo ? (
                     <>
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,#2a2366,#0f1330_60%,#05070f)]" />
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,#164577,#0f1330_60%,#021e40)]" />
                         <img src={photo} alt={name} className="relative h-full w-full object-cover object-top" loading="lazy" />
                     </>
                 ) : (
@@ -205,7 +204,7 @@ export function Orbits({ className }: { className?: string }) {
                 >
                     <span
                         className="absolute top-0 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full"
-                        style={{ background: ['#36e3f2', '#8b7bff', '#f064c4', '#e9c784'][i], boxShadow: `0 0 16px ${['#36e3f2', '#8b7bff', '#f064c4', '#e9c784'][i]}` }}
+                        style={{ background: ['#dd9933', '#f8b81f', '#ff8a3d', '#ffc600'][i], boxShadow: `0 0 16px ${['#dd9933', '#f8b81f', '#ff8a3d', '#ffc600'][i]}` }}
                     />
                 </motion.div>
             ))}
@@ -217,8 +216,8 @@ export function Orbits({ className }: { className?: string }) {
 export function PaperSection({ children, className, id }: { children: ReactNode; className?: string; id?: string }) {
     return (
         <section id={id} className={cn('theme-paper relative mx-2 my-4 overflow-clip rounded-[2rem] sm:mx-4 sm:rounded-[3.5rem]', className)}>
-            <div className="pointer-events-none absolute -top-48 right-[-8%] h-[560px] w-[560px] rounded-full bg-[#8b7bff]/25 blur-[140px]" aria-hidden />
-            <div className="pointer-events-none absolute -bottom-40 -left-24 h-[440px] w-[440px] rounded-full bg-[#e9c784]/30 blur-[140px]" aria-hidden />
+            <div className="pointer-events-none absolute -top-48 right-[-8%] h-[560px] w-[560px] rounded-full bg-[#f8b81f]/25 blur-[140px]" aria-hidden />
+            <div className="pointer-events-none absolute -bottom-40 -left-24 h-[440px] w-[440px] rounded-full bg-[#ffc600]/30 blur-[140px]" aria-hidden />
             <div className="relative">{children}</div>
         </section>
     );

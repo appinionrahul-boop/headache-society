@@ -118,7 +118,7 @@ export function Magnetic({ children, strength = 0.35, className }: { children: R
 }
 
 /** Card with a cursor-following spotlight and gradient hairline. */
-export function SpotlightCard({ children, className, color = 'rgba(139,123,255,0.18)' }: { children: ReactNode; className?: string; color?: string }) {
+export function SpotlightCard({ children, className, color = 'rgba(248,184,31,0.18)' }: { children: ReactNode; className?: string; color?: string }) {
     const mx = useMotionValue(-400);
     const my = useMotionValue(-400);
     const bg = useMotionTemplate`radial-gradient(420px circle at ${mx}px ${my}px, ${color}, transparent 65%)`;
@@ -198,7 +198,7 @@ export function CursorAura() {
         <motion.div
             aria-hidden
             style={{ x: sx, y: sy }}
-            className="pointer-events-none fixed top-0 left-0 z-0 hidden h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(139,123,255,0.10),transparent_65%)] md:block"
+            className="pointer-events-none fixed top-0 left-0 z-0 hidden h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(248,184,31,0.10),transparent_65%)] md:block"
         />
     );
 }

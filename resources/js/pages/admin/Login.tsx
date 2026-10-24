@@ -25,7 +25,7 @@ export default function Login() {
         <div className="relative grid min-h-screen overflow-hidden lg:grid-cols-[1.1fr_1fr]">
             <Seo title="Admin Login" />
             {/* brand side */}
-            <div className="relative hidden overflow-hidden bg-gradient-to-br from-[#120f33] via-ink-950 to-ink-950 lg:block">
+            <div className="theme-navy relative hidden overflow-hidden bg-gradient-to-br from-[#0b3360] via-ink-950 to-ink-950 lg:block">
                 <NeuralCanvas />
                 <Orbits className="top-1/2 left-1/2 w-[760px] -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-iris/30 blur-[120px]" />

@@ -29,7 +29,7 @@ export default function EventDetail() {
     return (
         <>
             <Seo title={event.title} description={event.summary} />
-            <section className="relative overflow-hidden pt-36 pb-16 sm:pt-44">
+            <section className="theme-navy relative overflow-hidden bg-ink-950 pt-36 pb-16 sm:pt-44">
                 <NeuralCanvas density={0.4} className="opacity-50" />
                 <div className="absolute -top-20 left-1/3 h-[500px] w-[700px] rounded-full blur-[150px]" style={{ background: `${type.color}25` }} />
                 <div className="relative container-x">

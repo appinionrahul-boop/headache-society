@@ -8,30 +8,33 @@
     --font-display: 'Instrument Serif', ui-serif, Georgia, serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-    /* Ink — the night-sky base */
-    --color-ink-50: #eef0f8;
-    --color-ink-100: #d7dbea;
-    --color-ink-200: #b3b9d2;
-    --color-ink-300: #8d94b2;
-    --color-ink-400: #686f8f;
-    --color-ink-500: #4a5070;
-    --color-ink-600: #2f3552;
-    --color-ink-700: #1d2340;
-    --color-ink-800: #121731;
-    --color-ink-900: #0a0e20;
-    --color-ink-950: #05070f;
+    /* Ink — light base. The scale is inverted (50 = strongest text, 950 = page
+     * background) so components written for a dark base read correctly on
+     * white; .theme-navy restores the dark scale for accent blocks. */
+    --color-white: #021e40;
+    --color-ink-50: #021e40;
+    --color-ink-100: #0e2f55;
+    --color-ink-200: #2a4566;
+    --color-ink-300: #4f5f73;
+    --color-ink-400: #696868;
+    --color-ink-500: #9aa6b4;
+    --color-ink-600: #c9d3de;
+    --color-ink-700: #dde5ed;
+    --color-ink-800: #ebebeb;
+    --color-ink-900: #f5f8fb;
+    --color-ink-950: #ffffff;
 
-    /* Neural accents */
-    --color-iris: #8b7bff;
-    --color-iris-deep: #5b45f0;
-    --color-synapse: #36e3f2;
-    --color-aura: #f064c4;
-    --color-gold: #e9c784;
-    --color-gold-deep: #b98f45;
+    /* Amber accents (darkened for contrast on white) */
+    --color-iris: #c47f1f;
+    --color-iris-deep: #a8661a;
+    --color-synapse: #b8741a;
+    --color-aura: #d9601f;
+    --color-gold: #b8741a;
+    --color-gold-deep: #dd9933;
 
     /* Editorial paper */
-    --color-paper: #f4f0e8;
-    --color-paper-ink: #14131a;
+    --color-paper: #eff6f9;
+    --color-paper-ink: #021e40;
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -130,7 +133,7 @@
         inset: 0;
         border-radius: inherit;
         padding: 1px;
-        background: linear-gradient(135deg, rgb(54 227 242 / 0.7), rgb(139 123 255 / 0.35) 35%, rgb(255 255 255 / 0.04) 60%, rgb(233 199 132 / 0.6));
+        background: linear-gradient(135deg, rgb(221 153 51 / 0.7), rgb(248 184 31 / 0.35) 35%, rgb(255 255 255 / 0.04) 60%, rgb(255 198 0 / 0.6));
         -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -174,54 +177,94 @@
     .input-lux::placeholder { color: var(--color-ink-400); }
     .input-lux:focus {
         outline: none;
-        border-color: rgb(54 227 242 / 0.6);
+        border-color: rgb(221 153 51 / 0.6);
         background: rgb(255 255 255 / 0.05);
-        box-shadow: 0 0 0 4px rgb(54 227 242 / 0.08);
+        box-shadow: 0 0 0 4px rgb(221 153 51 / 0.08);
     }
 }
 
 /* ── Paper theme ──────────────────────────────────────────────────────────
- * Light editorial sections. Remaps the palette so every component inside
- * (text, cards, pills, buttons, inputs) adapts without changes.
+ * Light blue-gray sections that alternate with the white page.
  */
 .theme-paper {
-    --color-white: #14131a;
-    --color-ink-50: #1b1a22;
-    --color-ink-100: #26252f;
-    --color-ink-200: #3b3a46;
-    --color-ink-300: #5a5968;
-    --color-ink-400: #7b7a8a;
-    --color-ink-500: #a09fae;
-    --color-ink-600: #c9c5d2;
-    --color-ink-700: #ddd8e3;
-    --color-ink-800: #ebe6ee;
     --color-ink-900: #ffffff;
-    --color-ink-950: #f4f0e8;
-    --color-synapse: #0a93a6;
-    --color-iris: #5b45f0;
-    --color-aura: #c8338f;
-    --color-gold: #a2741f;
+    --color-ink-950: #eff6f9;
     background: var(--color-paper);
     color: var(--color-ink-100);
 }
-.theme-paper .glass {
-    background: rgb(255 255 255 / 0.6);
-    border-color: rgb(20 19 26 / 0.08);
+
+/* Light-base defaults for the component classes above */
+@layer components {
+.glass {
+    background: rgb(255 255 255 / 0.7);
+    border-color: rgb(2 30 64 / 0.08);
 }
-.theme-paper .input-lux {
-    background: rgb(255 255 255 / 0.75);
-    border-color: rgb(20 19 26 / 0.12);
+.input-lux {
+    background: rgb(255 255 255 / 0.85);
+    border-color: rgb(2 30 64 / 0.14);
 }
-.theme-paper .input-lux:focus {
+.input-lux:focus {
     background: #fff;
+    border-color: rgb(221 153 51 / 0.7);
+    box-shadow: 0 0 0 4px rgb(221 153 51 / 0.12);
 }
-.theme-paper .grid-lines {
+.grid-lines {
     background-image:
-        linear-gradient(rgb(20 19 26 / 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(20 19 26 / 0.05) 1px, transparent 1px);
+        linear-gradient(rgb(2 30 64 / 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(2 30 64 / 0.05) 1px, transparent 1px);
 }
-.theme-paper ::selection {
-    color: #14131a;
+.text-gold {
+    background: linear-gradient(180deg, #e9b04a, #c47f1f 50%, #8f5a14);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+}
+::selection {
+    color: #021e40;
+}
+
+/* ── Navy theme ───────────────────────────────────────────────────────────
+ * Dark accent blocks (hero, CTA banners, footer). Restores the dark scale.
+ */
+.theme-navy {
+    --color-white: #ffffff;
+    --color-ink-50: #f3f6fa;
+    --color-ink-100: #e2e9f1;
+    --color-ink-200: #c7d4e2;
+    --color-ink-300: #a3b6cc;
+    --color-ink-400: #7d95b3;
+    --color-ink-500: #557497;
+    --color-ink-600: #2f5a87;
+    --color-ink-700: #1a4675;
+    --color-ink-800: #0e3560;
+    --color-ink-900: #07294d;
+    --color-ink-950: #021e40;
+    --color-iris: #f8b81f;
+    --color-iris-deep: #c47f1f;
+    --color-synapse: #dd9933;
+    --color-aura: #ff8a3d;
+    --color-gold: #ffc600;
+    color: var(--color-ink-50);
+}
+@layer components {
+.theme-navy .text-gold {
+    background: linear-gradient(180deg, #fff3d6, #ffc600 45%, #dd9933);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.theme-navy .glass {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.02));
+    border-color: rgb(255 255 255 / 0.08);
+}
+.theme-navy .input-lux {
+    background: rgb(255 255 255 / 0.03);
+    border-color: rgb(255 255 255 / 0.1);
+}
+.theme-navy .grid-lines {
+    background-image:
+        linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+}
 }
 
 /* Lenis smooth scroll */

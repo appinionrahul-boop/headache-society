@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#05070F">
+    <meta name="theme-color" content="#021e40">
     <meta name="description" content="Bangladesh Headache Society — advancing headache medicine in Bangladesh through education, research, collaboration and evidence-based care.">
     <title>Bangladesh Headache Society</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">

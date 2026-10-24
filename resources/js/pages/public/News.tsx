@@ -19,7 +19,7 @@ export default function News() {
                                 <PlaceholderArt hue={260} seed={4} className="aspect-[16/10] lg:aspect-auto" />
                                 <div className="p-8 sm:p-12">
                                     <div className="flex items-center gap-3">
-                                        <Pill color="#36e3f2">{lead.tag}</Pill>
+                                        <Pill color="#dd9933">{lead.tag}</Pill>
                                         <span className="font-mono text-xs text-ink-400">{formatDate(lead.date)}</span>
                                     </div>
                                     <h2 className="mt-6 font-display text-4xl leading-tight text-white sm:text-5xl">{lead.title}</h2>
@@ -36,7 +36,7 @@ export default function News() {
                             <Reveal key={n.slug} delay={i * 0.1}>
                                 <article className="ring-aurora h-full rounded-[2rem] bg-ink-900/60 p-8">
                                     <div className="flex items-center gap-3">
-                                        <Pill color="#8b7bff">{n.tag}</Pill>
+                                        <Pill color="#f8b81f">{n.tag}</Pill>
                                         <span className="font-mono text-xs text-ink-400">{formatDate(n.date)}</span>
                                     </div>
                                     <h3 className="mt-6 font-display text-3xl leading-tight text-white">{n.title}</h3>

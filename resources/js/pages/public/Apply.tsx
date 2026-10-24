@@ -191,7 +191,7 @@ export default function Apply() {
                                                         return (
                                                             <label key={p.name} className="cursor-pointer">
                                                                 <input type="radio" value={value} {...register('category')} className="peer sr-only" />
-                                                                <div className={cn('relative h-full rounded-3xl border p-6 transition-all duration-500', category === value ? 'border-synapse bg-synapse/[0.07] shadow-[0_0_40px_-10px_#36e3f2]' : 'border-white/10 hover:border-white/25')}>
+                                                                <div className={cn('relative h-full rounded-3xl border p-6 transition-all duration-500', category === value ? 'border-synapse bg-synapse/[0.07] shadow-[0_0_40px_-10px_#dd9933]' : 'border-white/10 hover:border-white/25')}>
                                                                     {category === value && (
                                                                         <span className="absolute top-5 right-5 grid h-6 w-6 place-items-center rounded-full bg-synapse text-ink-950">
                                                                             <Check className="h-3.5 w-3.5" />

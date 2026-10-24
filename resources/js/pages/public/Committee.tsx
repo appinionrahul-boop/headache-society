@@ -50,9 +50,9 @@ export default function Committee() {
                         <Reveal>
                             <Link
                                 to={`/doctors/${president.slug}`}
-                                className="group ring-aurora relative grid overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#ffffff] via-[#f6f2ff] to-[#ece5fb] p-8 shadow-[0_30px_80px_-40px_rgba(91,69,240,0.45)] sm:p-12 md:grid-cols-[auto_1fr] md:items-center md:gap-14"
+                                className="group ring-aurora relative grid overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#ffffff] via-[#f3f7fb] to-[#e3edf6] p-8 shadow-[0_30px_80px_-40px_rgba(196,127,31,0.45)] sm:p-12 md:grid-cols-[auto_1fr] md:items-center md:gap-14"
                             >
-                                <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#8b7bff]/20 blur-[120px]" />
+                                <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-[#f8b81f]/20 blur-[120px]" />
                                 <Avatar name={president.name} photo={president.photo} hue={40} className="relative w-44 text-lg transition-transform duration-700 group-hover:scale-105 sm:w-56" />
                                 <div className="relative mt-8 md:mt-0">
                                     <span className="eyebrow !text-gold">{president.ecPosition}</span>

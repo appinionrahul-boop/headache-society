@@ -169,7 +169,7 @@ function YearCalendar({ events }: { events: SocietyEvent[] }) {
                                                 onClick={() => setSelected(selected === iso ? null : iso)}
                                                 className={cn(
                                                     'relative grid aspect-square place-items-center rounded-lg text-[0.72rem] transition-all',
-                                                    evs ? 'font-bold text-[#05070f] hover:scale-110' : 'text-ink-300',
+                                                    evs ? 'font-bold text-[#021e40] hover:scale-110' : 'text-ink-300',
                                                     iso === today && !evs && 'ring-1 ring-white/30',
                                                     selected === iso && 'scale-110 ring-2 ring-white',
                                                 )}

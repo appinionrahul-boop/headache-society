@@ -15,11 +15,11 @@ export type SocietyEvent = {
 };
 
 export const eventTypes: Record<EventType, { label: string; color: string }> = {
-    cme: { label: 'CME Programme', color: '#36e3f2' },
-    awareness: { label: 'Public Awareness', color: '#f064c4' },
-    regional: { label: 'Regional Event', color: '#8b7bff' },
-    special: { label: 'Special Day', color: '#e9c784' },
-    meeting: { label: 'Society Meeting', color: '#7ee2a8' },
+    cme: { label: 'CME Programme', color: '#dd9933' },
+    awareness: { label: 'Public Awareness', color: '#ff8a3d' },
+    regional: { label: 'Regional Event', color: '#4da3ff' },
+    special: { label: 'Special Day', color: '#ffc600' },
+    meeting: { label: 'Society Meeting', color: '#3bbc9b' },
 };
 
 export const events: SocietyEvent[] = [

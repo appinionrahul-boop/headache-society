@@ -51,13 +51,13 @@ function Hero() {
     const orbY = useTransform(scrollYProgress, [0, 1], [0, -160]);
 
     return (
-        <section ref={ref} className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden">
+        <section ref={ref} className="theme-navy relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-ink-950">
             <div className="absolute inset-0 grid-lines" />
             <NeuralCanvas />
 
             {/* holographic brain inside the migraine-aura orb */}
             <motion.div style={{ y: orbY }} className="pointer-events-none absolute top-[14%] -right-[38%] h-[80vmin] w-[80vmin] opacity-50 sm:top-[8%] sm:right-[-12%] sm:opacity-80 lg:-right-[2%] lg:opacity-100">
-                <div className="absolute inset-[6%] animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,#36e3f2,#8b7bff,#f064c4,#e9c784,#36e3f2)] opacity-20 blur-[110px]" />
+                <div className="absolute inset-[6%] animate-spin-slow rounded-full bg-[conic-gradient(from_0deg,#dd9933,#f8b81f,#ff8a3d,#ffc600,#dd9933)] opacity-20 blur-[110px]" />
                 <div className="absolute inset-[16%] rounded-full bg-ink-950/85 blur-3xl" />
                 <Orbits className="inset-0 h-full w-full" />
                 <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 2, ease: [0.16, 1, 0.3, 1] }} className="absolute -inset-[8%]">
@@ -91,7 +91,7 @@ function Hero() {
                 ))}
             </motion.div>
             <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-synapse/10 blur-[140px]" />
-            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-ink-950" />
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-[#ffffff]" />
 
             <motion.div style={{ y, opacity, scale }} className="relative container-x pt-32 pb-12 lg:pb-40">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 1 }}>
@@ -238,12 +238,12 @@ function MissionVision() {
                         { k: 'Vision', n: '02', text: vision },
                     ].map((m, i) => (
                         <Reveal key={m.k} delay={i * 0.15}>
-                            <div className="group relative h-full overflow-hidden rounded-[2rem] border border-paper-ink/10 bg-white/60 p-8 backdrop-blur transition-colors duration-700 hover:bg-paper-ink sm:p-12">
+                            <div className="group relative h-full overflow-hidden rounded-[2rem] border border-paper-ink/10 bg-[#ffffff]/60 p-8 backdrop-blur transition-colors duration-700 hover:bg-paper-ink sm:p-12">
                                 <div className="flex items-center justify-between">
-                                    <span className="font-mono text-xs tracking-[0.25em] text-paper-ink/50 uppercase transition-colors group-hover:text-white/50">{m.k}</span>
-                                    <span className="font-display text-5xl text-paper-ink/15 italic transition-colors group-hover:text-white/20">{m.n}</span>
+                                    <span className="font-mono text-xs tracking-[0.25em] text-paper-ink/50 uppercase transition-colors group-hover:text-[#ffffff]/50">{m.k}</span>
+                                    <span className="font-display text-5xl text-paper-ink/15 italic transition-colors group-hover:text-[#ffffff]/20">{m.n}</span>
                                 </div>
-                                <p className="mt-10 font-display text-3xl leading-[1.15] transition-colors group-hover:text-white sm:text-[2.2rem]">“{m.text}”</p>
+                                <p className="mt-10 font-display text-3xl leading-[1.15] transition-colors group-hover:text-[#ffffff] sm:text-[2.2rem]">“{m.text}”</p>
                                 <div className="absolute -right-20 -bottom-20 h-56 w-56 rounded-full bg-gradient-to-br from-synapse to-aura opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-50" />
                             </div>
                         </Reveal>
@@ -340,7 +340,7 @@ function Challenges() {
                         </div>
                         <div className="flex flex-wrap gap-2 lg:max-w-2xl lg:justify-end">
                             {awarenessTopics.map((t) => (
-                                <Pill key={t} color="#f064c4">
+                                <Pill key={t} color="#ff8a3d">
                                     {t}
                                 </Pill>
                             ))}
@@ -431,7 +431,7 @@ function Journey() {
                     <motion.div style={{ x }} className="flex w-max gap-8 pl-4 sm:pl-10 lg:pl-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))]">
                         {[...milestones, { year: 'Next', title: 'National headache network', text: 'Conferences, specialised clinics, registries and multicentre research — the road ahead.' }].map((m, i) => (
                             <div key={i} className="w-[78vw] max-w-[440px] shrink-0">
-                                <span className="relative block h-4 w-4 rounded-full border-2 border-synapse bg-ink-950 shadow-[0_0_20px_#36e3f2]" />
+                                <span className="relative block h-4 w-4 rounded-full border-2 border-synapse bg-ink-950 shadow-[0_0_20px_#dd9933]" />
                                 <div className="mt-8 font-display text-6xl text-aurora italic sm:text-8xl">{m.year}</div>
                                 <h3 className="mt-4 font-display text-3xl text-white">{m.title}</h3>
                                 <p className="mt-3 max-w-sm leading-relaxed text-ink-300">{m.text}</p>
@@ -576,7 +576,7 @@ function Newsroom() {
                             <Link to="/news" className="group block h-full">
                                 <SpotlightCard className="flex h-full flex-col p-7">
                                     <div className="flex items-center justify-between">
-                                        <Pill color="#36e3f2">{n.tag}</Pill>
+                                        <Pill color="#dd9933">{n.tag}</Pill>
                                         <span className="font-mono text-xs text-ink-400">{formatDate(n.date)}</span>
                                     </div>
                                     <h3 className="mt-8 font-display text-2xl leading-snug text-white sm:text-3xl">{n.title}</h3>
@@ -600,7 +600,7 @@ function FinalCta() {
     return (
         <section className="relative py-20 sm:py-28">
             <div className="container-x">
-                <div className="ring-aurora relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#16123a] via-ink-900 to-ink-950 px-6 py-24 text-center sm:px-16 sm:py-32">
+                <div className="theme-navy ring-aurora relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0d3561] via-ink-900 to-ink-950 px-6 py-24 text-center sm:px-16 sm:py-32">
                     <Orbits className="top-1/2 left-1/2 w-[900px] -translate-x-1/2 -translate-y-1/2" />
                     <div className="absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-iris/30 blur-[100px]" />
                     <div className="relative">

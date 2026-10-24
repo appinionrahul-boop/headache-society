@@ -37,7 +37,7 @@ const columns = [
 
 export function Footer() {
     return (
-        <footer className="relative overflow-hidden border-t border-white/[0.06] bg-ink-950 pt-20">
+        <footer className="theme-navy relative overflow-hidden border-t border-white/[0.06] bg-ink-950 pt-20">
             <div className="absolute bottom-0 left-1/2 h-[400px] w-[1000px] -translate-x-1/2 translate-y-1/2 rounded-full bg-iris/15 blur-[140px]" />
 
             <div className="relative container-x">

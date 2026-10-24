@@ -142,9 +142,9 @@ const vertexShader = /* glsl */ `
     varying float vAlpha;
 
     void main() {
-        vec3 cyan = vec3(0.21, 0.89, 0.95);
-        vec3 iris = vec3(0.55, 0.48, 1.0);
-        vec3 aura = vec3(0.94, 0.39, 0.77);
+        vec3 cyan = vec3(0.87, 0.6, 0.2);
+        vec3 iris = vec3(0.97, 0.72, 0.12);
+        vec3 aura = vec3(1.0, 0.54, 0.24);
         vec3 base = aTone < 0.5 ? mix(aura, iris, aTone * 2.0) : mix(iris, cyan, (aTone - 0.5) * 2.0);
 
         vec4 mv = modelViewMatrix * vec4(position, 1.0);
@@ -242,12 +242,12 @@ export default function NeuralBrain({ className }: { className?: string }) {
         const centered = geometry.attributes.position.array as Float32Array;
         const linkGeo = new THREE.BufferGeometry();
         linkGeo.setAttribute('position', new THREE.BufferAttribute(buildSynapses(centered, small ? 300 : 700), 3));
-        const linkMat = new THREE.LineBasicMaterial({ color: 0x8b7bff, transparent: true, opacity: 0.05, blending: THREE.AdditiveBlending, depthWrite: false });
+        const linkMat = new THREE.LineBasicMaterial({ color: 0xf8b81f, transparent: true, opacity: 0.05, blending: THREE.AdditiveBlending, depthWrite: false });
         brain.add(new THREE.LineSegments(linkGeo, linkMat));
 
         // Scanner ring
         const ringGeo = new THREE.RingGeometry(1.1, 1.108, 160);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0x36e3f2, transparent: true, opacity: 0.35, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false });
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xdd9933, transparent: true, opacity: 0.35, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false });
         const ring = new THREE.Mesh(ringGeo, ringMat);
         ring.rotation.x = Math.PI / 2;
         brain.add(ring);
@@ -265,7 +265,7 @@ export default function NeuralBrain({ className }: { className?: string }) {
         }
         const haloGeo = new THREE.BufferGeometry();
         haloGeo.setAttribute('position', new THREE.BufferAttribute(halo, 3));
-        const haloMat = new THREE.PointsMaterial({ color: 0xe9c784, size: 0.012, transparent: true, opacity: 0.6, blending: THREE.AdditiveBlending, depthWrite: false });
+        const haloMat = new THREE.PointsMaterial({ color: 0xffc600, size: 0.012, transparent: true, opacity: 0.6, blending: THREE.AdditiveBlending, depthWrite: false });
         const haloPts = new THREE.Points(haloGeo, haloMat);
         haloPts.rotation.set(0.35, 0, 0.18);
         scene.add(haloPts);

@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn';
 type Node = { x: number; y: number; vx: number; vy: number; r: number; hue: number; phase: number };
 type Pulse = { a: number; b: number; t: number; speed: number; color: string };
 
-const COLORS = ['#36e3f2', '#8b7bff', '#f064c4', '#e9c784'];
+const COLORS = ['#dd9933', '#f8b81f', '#ff8a3d', '#ffc600'];
 
 /**
  * A living neural field: drifting neurons, synaptic links and signal pulses
@@ -109,7 +109,7 @@ export function NeuralCanvas({ className, density = 1 }: { className?: string; d
                     const dist = dx * dx + dy * dy;
                     if (dist < d * d) {
                         const alpha = (1 - Math.sqrt(dist) / d) * 0.22;
-                        ctx.strokeStyle = `rgba(139,123,255,${alpha})`;
+                        ctx.strokeStyle = `rgba(248,184,31,${alpha})`;
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y);
                         ctx.lineTo(b.x, b.y);
@@ -123,7 +123,7 @@ export function NeuralCanvas({ className, density = 1 }: { className?: string; d
                 for (const n of nodes) {
                     const dist = Math.hypot(mouse.x - n.x, mouse.y - n.y);
                     if (dist < 180) {
-                        ctx.strokeStyle = `rgba(54,227,242,${(1 - dist / 180) * 0.45})`;
+                        ctx.strokeStyle = `rgba(221,153,51,${(1 - dist / 180) * 0.45})`;
                         ctx.beginPath();
                         ctx.moveTo(mouse.x, mouse.y);
                         ctx.lineTo(n.x, n.y);

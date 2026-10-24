@@ -46,7 +46,7 @@ export function Navbar() {
                     <div
                         className={cn(
                             'flex items-center justify-between rounded-full py-2 pr-2 pl-4 transition-all duration-700',
-                            scrolled ? 'glass !bg-ink-950/80 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]' : 'border border-transparent',
+                            scrolled ? 'glass !bg-ink-950/80 shadow-[0_20px_60px_-20px_rgba(2,30,64,0.25)]' : 'glass !bg-ink-950/90 shadow-[0_10px_40px_-20px_rgba(2,30,64,0.2)]',
                         )}
                     >
                         <Link to="/" aria-label={`${site.name} home`}>
